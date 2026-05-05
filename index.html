@@ -191,25 +191,15 @@ nav.scrolled {
 }
 
 .nav-logo {
-  display: flex; align-items: center; gap: 13px;
-  text-decoration: none; color: var(--w);
+  display: flex; align-items: center;
+  text-decoration: none;
 }
-.nav-badge {
-  width: 36px; height: 36px;
-  border: 1px solid var(--bd-gold);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif);
-  font-size: 18px; font-weight: 500;
-  color: var(--gold);
-  flex-shrink: 0;
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
 }
-.nav-wordmark {
-  font-family: var(--serif);
-  font-size: 20px; font-weight: 400;
-  letter-spacing: 0.01em; color: var(--w);
-}
-.nav-wordmark b { color: var(--gold); font-weight: 400; }
 
 .nav-links {
   list-style: none; display: flex; gap: 44px;
@@ -863,8 +853,7 @@ footer {
 <!-- ─── NAV ─────────────────────────────────────────── -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <div class="nav-badge">B</div>
-    <span class="nav-wordmark">Boardwalk <b>&</b> Co</span>
+    <img src="logo.png" alt="Boardwalk & Co" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="#philosophy">The Idea</a></li>
