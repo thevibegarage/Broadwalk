@@ -788,15 +788,33 @@ nav.scrolled {
 
 /* Bio drawer photo */
 .bio-drawer-photo {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 3/4;
+  width: 180px;
+  height: 180px;
+  aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center top;
-  border-radius: 2px;
+  border-radius: 3px;
   display: block;
   margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Named experts joining soon */
+.expert-card.named-soon {
+  cursor: default;
+}
+.expert-card.named-soon:hover {
+  border-color: var(--bd-k);
+  box-shadow: none;
+}
+.joining-badge {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.75;
+  border: 1px solid rgba(212,168,67,0.28);
+  padding: 4px 10px; border-radius: 2px;
 }
 
 /* Expert card — clickable state */
@@ -1011,6 +1029,18 @@ nav.scrolled {
 .cta-btns {
   display: flex; gap: 16px; justify-content: center;
 }
+.cta-email {
+  margin-top: 22px;
+  font-size: 14px; font-weight: 300;
+  color: var(--w-muted);
+  letter-spacing: 0.02em;
+}
+.cta-email a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color .25s;
+}
+.cta-email a:hover { color: var(--gold-hi); }
 
 /* ══════════════════════════════════════════════════════════
    FOOTER
@@ -1219,6 +1249,7 @@ footer {
 
     <div class="phil-tags rev del-2">
       <span class="phil-tag">Ex-CXO Advisors</span>
+      <span class="phil-tag">Thought Leaders</span>
       <span class="phil-tag">Front-line Operators</span>
       <span class="phil-tag">Industry Insiders</span>
       <span class="phil-tag">Skin in the Game</span>
@@ -1496,29 +1527,33 @@ footer {
           <div class="expert-domain">Consumer Durables, Marketing &amp; Retail Expert</div>
           <div class="expert-expand">▼ Profile</div>
         </div>
-        <div class="expert-card coming-soon rev del-1">
-          <div class="expert-mono">+</div>
-          <div class="expert-nm">Expert Advisor</div>
+        <div class="expert-card named-soon rev del-1">
+          <div class="expert-mono">SS</div>
+          <div class="expert-nm">Sumit Singh</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Joining soon</div>
+          <div class="expert-domain">AI &amp; Digital Transformation</div>
+          <div class="joining-badge">Joining Soon</div>
         </div>
-        <div class="expert-card coming-soon rev del-2">
-          <div class="expert-mono">+</div>
-          <div class="expert-nm">Expert Advisor</div>
+        <div class="expert-card named-soon rev del-2">
+          <div class="expert-mono">SA</div>
+          <div class="expert-nm">Syed Amjad Ali</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Joining soon</div>
+          <div class="expert-domain">Advertising &amp; Communications</div>
+          <div class="joining-badge">Joining Soon</div>
         </div>
-        <div class="expert-card coming-soon rev del-3">
-          <div class="expert-mono">+</div>
-          <div class="expert-nm">Expert Advisor</div>
+        <div class="expert-card named-soon rev del-3">
+          <div class="expert-mono">VA</div>
+          <div class="expert-nm">Vinod Agarwal</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Joining soon</div>
+          <div class="expert-domain">CA &amp; CS, Finance &amp; Compliances</div>
+          <div class="joining-badge">Joining Soon</div>
         </div>
-        <div class="expert-card coming-soon rev del-4">
-          <div class="expert-mono">+</div>
-          <div class="expert-nm">Expert Advisor</div>
+        <div class="expert-card named-soon rev del-4">
+          <div class="expert-mono">KK</div>
+          <div class="expert-nm">Kapil Kumria</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Joining soon</div>
+          <div class="expert-domain">Government Affairs</div>
+          <div class="joining-badge">Joining Soon</div>
         </div>
       </div>
 
@@ -1542,7 +1577,7 @@ footer {
         <p>Deba is a seasoned business leader with over <strong>three decades of experience</strong> in building brands, driving growth, and leading business transformation across consumer-facing industries. With deep expertise in marketing, product planning, and channel expansion, he has consistently delivered market leadership and strong business outcomes.</p>
         <p>At <strong>Voltas (a Tata Group company)</strong>, Deba was a key force behind the transformation and leadership of its Room Air Conditioning business since 2011. He drove significant growth in market share and brand equity, while strengthening distribution, channel reach and retail across India. His leadership powered consumer-centric innovations such as All Weather AC, Adjustable AC, Pure Air AC, and Smart AC, and expanded Voltas into new categories including air coolers and home appliances. During his tenure, Voltas achieved multi-fold growth and emerged as one of India's most trusted and leading AC brands — also achieving a <strong>Top 10 ranking as the strongest Indian brand</strong> across all categories, as per the prestigious Brand Finance Report.</p>
         <p>Earlier, Deba was part of the core leadership team at <strong>LG Electronics</strong> during its formative years in India, contributing to its rapid rise as a market leader in consumer electronics and home appliances. Working closely with global leadership, he played an important role in establishing the LG brand in India, shaping its product portfolio and go-to-market strategies, and driving high performance in a competitive market.</p>
-        <p>He has also held leadership roles across organisations such as <strong>Hero Electric</strong> and <strong>Honda Power</strong>, including pioneering efforts in India's early electric mobility space. In 2025, Deba stepped down from his executive roles and founded <strong>Boardwalk &amp; Co</strong> — a consortium of industry domain experts providing customised advisory services to consumer-facing brands, alongside co-working engagements with leading management consulting firms.</p>
+        <p>He has also held leadership roles across organizations such as <strong>Hero Electric</strong> and <strong>Honda Power</strong>, including pioneering efforts in India's early electric mobility space. In 2025, Deba stepped down from his executive roles and founded <strong>Boardwalk &amp; Co</strong> — a consortium of senior industry domain experts providing customized advisory services to consumer-facing brands, alongside co-working engagements with leading consulting firms.</p>
         <div class="bio-awards">
           <div class="bio-awards-label">Awards &amp; Recognition</div>
           <div class="bio-awards-list">
@@ -1570,7 +1605,7 @@ footer {
         <h2 class="d2-type rev del-1">Clients &amp;<br><em>Associates.</em></h2>
       </div>
       <p class="cl-header-note rev del-2">
-        Our network spans leading brands across consumer durables, cooling, automotive, and FMCG — alongside specialist associates in retail marketing, corporate affairs, and consulting.
+        Our Client network spans leading brands across consumer durables, cooling, automotive, and FMCG — alongside specialist associates in retail marketing, corporate affairs, and consulting.
       </p>
     </div>
 
@@ -1583,9 +1618,9 @@ footer {
     </div>
 
     <div class="cl-category rev del-2">
-      <div class="cl-cat-label">Air Cooling</div>
+      <div class="cl-cat-label">Air Coolers</div>
       <div class="cl-logos">
-        <div class="cl-logo-tile">Honeywell</div>
+        <div class="cl-logo-tile">JMATEK / Honeywell</div>
         <div class="cl-logo-tile">Quilo Air Coolers</div>
       </div>
     </div>
@@ -1594,12 +1629,12 @@ footer {
       <div class="cl-cat-label">Associates — Retail Marketing &amp; Corporate Affairs</div>
       <div class="cl-logos">
         <div class="cl-logo-tile">Ubora</div>
-        <div class="cl-logo-tile">Optimax</div>
+        <div class="cl-logo-tile">Optimax Aces</div>
       </div>
     </div>
 
     <div class="cl-category rev del-4">
-      <div class="cl-cat-label">Consulting Networks</div>
+      <div class="cl-cat-label">Associates — Expert Networks</div>
       <div class="cl-logos">
         <div class="cl-logo-tile">Bain Advisor Network</div>
         <div class="cl-logo-tile">Vedak Expert Network</div>
@@ -1622,6 +1657,9 @@ footer {
       <a href="mailto:connect@boardwalk.co.in" class="btn-fill">Write to Us →</a>
       <a href="tel:+911244999091" class="btn-ghost">+91 124 4999091</a>
     </div>
+    <p class="cta-email rev del-4">
+      <a href="mailto:connect@boardwalk.co.in">connect@boardwalk.co.in</a>
+    </p>
   </div>
 </section>
 
