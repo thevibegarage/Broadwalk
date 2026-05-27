@@ -770,6 +770,35 @@ nav.scrolled {
   font-size: 28px;
 }
 
+/* Expert photo */
+.expert-photo {
+  width: 80px; height: 80px;
+  border-radius: 3px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin: 0 auto 20px;
+  border: 1px solid var(--bd-k);
+  transition: border-color .3s;
+}
+.expert-card[data-expert]:hover .expert-photo,
+.expert-card[data-expert].active .expert-photo {
+  border-color: var(--gold);
+}
+
+/* Bio drawer photo */
+.bio-drawer-photo {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 2px;
+  display: block;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
 /* Expert card — clickable state */
 .expert-card[data-expert] {
   cursor: pointer;
@@ -1457,8 +1486,8 @@ footer {
     <div class="experts-block rev del-1">
       <div class="label on-light">The Consortium</div>
       <div class="experts-grid">
-        <div class="expert-card rev" data-expert="deba">
-          <div class="expert-mono">DG</div>
+        <div class="expert-card rev" data-expert="deba" data-photo="deba-portrait.jpg">
+          <img src="deba-thumb.jpg" alt="Deba Ghoshal" class="expert-photo">
           <div class="expert-nm">Deba Ghoshal</div>
           <div class="expert-role">Founder &amp; Principal</div>
           <div class="expert-domain">Consumer Durables, Marketing &amp; Retail Expert</div>
@@ -1494,6 +1523,7 @@ footer {
       <div class="expert-bio-drawer" id="expertBioDrawer">
         <div class="bio-drawer-inner">
           <div class="bio-drawer-meta">
+            <img src="" alt="" class="bio-drawer-photo" id="bioPhoto" style="display:none;">
             <div class="bio-drawer-mono" id="bioMono"></div>
             <div class="bio-drawer-name" id="bioName"></div>
             <div class="bio-drawer-role" id="bioRole"></div>
@@ -1657,6 +1687,7 @@ document.querySelectorAll('.rev').forEach(el => io.observe(el));
 // Expert bio drawer
 (function() {
   const drawer   = document.getElementById('expertBioDrawer');
+  const bioPhoto = document.getElementById('bioPhoto');
   const bioMono  = document.getElementById('bioMono');
   const bioName  = document.getElementById('bioName');
   const bioRole  = document.getElementById('bioRole');
@@ -1677,8 +1708,20 @@ document.querySelectorAll('.rev').forEach(el => io.observe(el));
         return;
       }
 
-      // Populate
-      bioMono.textContent   = this.querySelector('.expert-mono').textContent;
+      // Populate photo or monogram fallback
+      const photo = this.dataset.photo;
+      if (photo) {
+        bioPhoto.src = photo;
+        bioPhoto.alt = this.querySelector('.expert-nm').textContent;
+        bioPhoto.style.display = 'block';
+        bioMono.style.display  = 'none';
+      } else {
+        bioPhoto.style.display = 'none';
+        bioMono.style.display  = 'flex';
+        const monoEl = this.querySelector('.expert-mono');
+        bioMono.textContent = monoEl ? monoEl.textContent : '';
+      }
+
       bioName.textContent   = this.querySelector('.expert-nm').textContent;
       bioRole.textContent   = this.querySelector('.expert-role').textContent;
       bioDomain.textContent = this.querySelector('.expert-domain').textContent;
