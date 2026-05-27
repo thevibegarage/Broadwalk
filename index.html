@@ -705,6 +705,119 @@ nav.scrolled {
 }
 
 /* ══════════════════════════════════════════════════════════
+   EXPERT PROFILES GRID  (cream, within team section)
+══════════════════════════════════════════════════════════ */
+.experts-block {
+  margin-top: 100px;
+  padding-top: 80px;
+  border-top: 1px solid var(--bd-k);
+}
+.experts-block .label { margin-bottom: 36px; }
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.expert-card {
+  border: 1px solid var(--bd-k);
+  padding: 36px 28px 32px;
+  background: var(--cream-2);
+  text-align: center;
+  cursor: default;
+  transition: border-color .3s, box-shadow .3s;
+}
+.expert-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 32px rgba(212,168,67,0.08);
+}
+.expert-mono {
+  width: 60px; height: 60px;
+  background: var(--k);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 500;
+  color: var(--gold);
+  margin: 0 auto 20px;
+}
+.expert-nm {
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 400;
+  color: var(--k); margin-bottom: 6px; line-height: 1.2;
+}
+.expert-role {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.expert-domain {
+  font-size: 12.5px; font-weight: 300;
+  line-height: 1.7; color: var(--k-muted);
+}
+.expert-card.coming-soon {
+  opacity: 0.45;
+  border-style: dashed;
+}
+.expert-card.coming-soon .expert-mono {
+  background: transparent;
+  border: 1px dashed var(--bd-k);
+  color: var(--k-faint);
+  font-size: 28px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CLIENTS & ASSOCIATES  (dark)
+══════════════════════════════════════════════════════════ */
+.clients {
+  background: var(--ink);
+  padding: 140px 80px;
+  border-top: 1px solid var(--bd);
+}
+.cl-inner { max-width: 1280px; margin: 0 auto; }
+.cl-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: end;
+  margin-bottom: 80px;
+}
+.cl-header-note {
+  font-size: 15px; font-weight: 300;
+  line-height: 1.8; color: var(--w-muted);
+  max-width: 380px; justify-self: end;
+}
+.cl-category { margin-bottom: 56px; }
+.cl-category:last-child { margin-bottom: 0; }
+.cl-cat-label {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.7;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bd);
+}
+.cl-logos {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.cl-logo-tile {
+  display: flex; align-items: center; justify-content: center;
+  padding: 18px 32px;
+  border: 1px solid var(--bd);
+  border-radius: 2px;
+  font-family: var(--sans);
+  font-size: 13px; font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--w-muted);
+  cursor: default;
+  transition: border-color .25s, color .25s;
+  white-space: nowrap;
+  min-width: 160px;
+}
+.cl-logo-tile:hover {
+  border-color: rgba(212,168,67,0.4);
+  color: var(--w);
+}
+
+/* ══════════════════════════════════════════════════════════
    CTA  (dark)
 ══════════════════════════════════════════════════════════ */
 .cta-sec {
@@ -833,6 +946,9 @@ footer {
   .team         { padding: 80px 40px; }
   .team-layout  { grid-template-columns: 1fr; gap: 52px; }
   .team-card    { position: static; }
+  .experts-grid { grid-template-columns: repeat(2, 1fr); }
+  .clients      { padding: 80px 40px; }
+  .cl-header    { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
   .cta-sec      { padding: 100px 40px; }
   footer        { padding: 60px 40px 40px; }
   .ft-top       { grid-template-columns: 1fr 1fr; gap: 44px; }
@@ -843,6 +959,7 @@ footer {
   .hero-ctas    { flex-direction: column; }
   .ind-grid     { grid-template-columns: 1fr; }
   .steps-grid   { grid-template-columns: 1fr; }
+  .experts-grid { grid-template-columns: 1fr; }
   .cta-btns     { flex-direction: column; align-items: center; }
   .ft-top       { grid-template-columns: 1fr; }
 }
@@ -860,6 +977,7 @@ footer {
     <li><a href="#services">Services</a></li>
     <li><a href="#industries">Industries</a></li>
     <li><a href="#team">The Team</a></li>
+    <li><a href="#clients">Clients</a></li>
   </ul>
   <a href="#contact" class="nav-engage">Engage Us</a>
 </nav>
@@ -884,7 +1002,7 @@ footer {
 
   <div class="hero-bar">
     <p class="hero-sub">
-      A collective of ex-CXOs with <strong>three decades of front-line industry experience</strong> — not academic consultants, but operators who have grown businesses, won markets, and created real value.
+      A collective of ex-CXOs with <strong>decades of front-line industry experience</strong> — not academic consultants, but operators who have grown businesses, won markets, and created real value.
     </p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-fill">Begin the Conversation →</a>
@@ -897,16 +1015,16 @@ footer {
 <div class="stats">
   <div class="stats-grid">
     <div class="stat rev">
-      <div class="stat-n">30<sup>+</sup></div>
-      <div class="stat-l">Years of front-line<br>industry experience</div>
+      <div class="stat-n">100<sup>+</sup></div>
+      <div class="stat-l">Aggregate years of<br>front-line experience</div>
     </div>
     <div class="stat rev del-1">
-      <div class="stat-n">6</div>
+      <div class="stat-n">8</div>
       <div class="stat-l">Core practice<br>areas</div>
     </div>
     <div class="stat rev del-2">
       <div class="stat-n">5</div>
-      <div class="stat-l">Industries known<br>from the inside</div>
+      <div class="stat-l">Industries known<br>from inside</div>
     </div>
     <div class="stat rev del-3">
       <div class="stat-n">1<sup>st</sup></div>
@@ -947,7 +1065,7 @@ footer {
       <span class="phil-tag">Front-line Operators</span>
       <span class="phil-tag">Industry Insiders</span>
       <span class="phil-tag">Skin in the Game</span>
-      <span class="phil-tag">New Delhi, India</span>
+      <span class="phil-tag">Indian Subcontinent</span>
     </div>
   </div>
 </section>
@@ -961,7 +1079,7 @@ footer {
         <h2 class="d2-type rev del-1">Every challenge.<br>One <em>boardwalk.</em></h2>
       </div>
       <p class="svc-header-note rev del-2">
-        Whether you need a business plan to start, or want to enhance market share, strengthen brand equity, or drive AI integration — we bring operators' instinct to your specific challenge.
+        Whether you need a business plan to start, or want to enhance market share, strengthen brand equity, drive AI integration, or accelerate Market Cap — we bring operators' instinct to your specific challenge.
       </p>
     </div>
 
@@ -981,41 +1099,65 @@ footer {
       <div class="svc-row rev del-1">
         <div class="svc-idx">02</div>
         <div>
-          <div class="svc-name">Brand &amp; Marketing Communication</div>
-          <div class="svc-info">Creative strategy, media plan ratification, campaign execution, and brand equity enhancement — from advisors who have run brand P&amp;Ls at scale.</div>
+          <div class="svc-name">P&amp;L &amp; Market Cap Enhancement</div>
+          <div class="svc-info">Margin improvement, setting key milestones, and accelerating market cap — driving measurable impact on topline, bottomline, and value creation.</div>
         </div>
         <div class="svc-chips">
-          <span class="svc-chip">Brand Advisory</span>
-          <span class="svc-chip">Media</span>
-          <span class="svc-chip">Campaign</span>
+          <span class="svc-chip">P&amp;L</span>
+          <span class="svc-chip">Margins</span>
+          <span class="svc-chip">Market Cap</span>
         </div>
       </div>
       <div class="svc-row rev del-2">
         <div class="svc-idx">03</div>
         <div>
-          <div class="svc-name">P&amp;L &amp; Revenue Enhancement</div>
-          <div class="svc-info">Margin improvement, market share acceleration, product portfolio expansion — driving measurable impact on your top and bottom line.</div>
+          <div class="svc-name">Product Planning &amp; Supply Chain</div>
+          <div class="svc-info">Product portfolio augmentation and leaner, more efficient supply chain — driving better efficiency and competitive advantage across the value chain.</div>
         </div>
         <div class="svc-chips">
-          <span class="svc-chip">P&amp;L</span>
-          <span class="svc-chip">Margins</span>
+          <span class="svc-chip">Product Planning</span>
           <span class="svc-chip">Portfolio</span>
+          <span class="svc-chip">SCM</span>
         </div>
       </div>
       <div class="svc-row rev del-3">
         <div class="svc-idx">04</div>
         <div>
-          <div class="svc-name">Channel &amp; Sales Strategy</div>
-          <div class="svc-info">Distribution architecture, partner programs, and sales force design that win share in India's complex multi-channel environment.</div>
+          <div class="svc-name">Brand Advisory &amp; Marketing Communication</div>
+          <div class="svc-info">Brand equity enhancement, marketing strategy, campaign ideation, media ratification, trade marketing, counter extraction, and digital &amp; performance marketing — from advisors who have run Brand P&amp;Ls at scale.</div>
         </div>
         <div class="svc-chips">
-          <span class="svc-chip">Distribution</span>
-          <span class="svc-chip">Channel</span>
-          <span class="svc-chip">Sales</span>
+          <span class="svc-chip">Brand Advisory</span>
+          <span class="svc-chip">Campaign Planning</span>
+          <span class="svc-chip">Digital</span>
         </div>
       </div>
       <div class="svc-row rev del-1">
         <div class="svc-idx">05</div>
+        <div>
+          <div class="svc-name">Channel &amp; Sales Strategy</div>
+          <div class="svc-info">Distribution architecture, partner programs, and sales force design that wins market share, reach, and extraction in India's complex multi-channel environment across B2C, B2T, B2B, and D2C.</div>
+        </div>
+        <div class="svc-chips">
+          <span class="svc-chip">Distribution</span>
+          <span class="svc-chip">Channel</span>
+          <span class="svc-chip">Market Share</span>
+        </div>
+      </div>
+      <div class="svc-row rev del-2">
+        <div class="svc-idx">06</div>
+        <div>
+          <div class="svc-name">Customer Experience &amp; After-Sales Service</div>
+          <div class="svc-info">Enhancing Customer Satisfaction Index, driving efficiency in after-sales service across a diverse customer touch-point network.</div>
+        </div>
+        <div class="svc-chips">
+          <span class="svc-chip">CSI</span>
+          <span class="svc-chip">NPS</span>
+          <span class="svc-chip">Service Network</span>
+        </div>
+      </div>
+      <div class="svc-row rev del-3">
+        <div class="svc-idx">07</div>
         <div>
           <div class="svc-name">Digital Transformation &amp; AI Integration</div>
           <div class="svc-info">Drive AI across marketing, supply chain, operations, and customer experience — with pragmatic roadmaps that actually get implemented.</div>
@@ -1026,10 +1168,10 @@ footer {
           <span class="svc-chip">Operations</span>
         </div>
       </div>
-      <div class="svc-row rev del-2">
-        <div class="svc-idx">06</div>
+      <div class="svc-row rev del-1">
+        <div class="svc-idx">08</div>
         <div>
-          <div class="svc-name">Corporate Affairs &amp; Industry Relations</div>
+          <div class="svc-name">Corporate Affairs &amp; Media Relations</div>
           <div class="svc-info">Navigate regulatory landscapes, industry associations, and media — with the credibility only senior leaders who have held these roles can bring.</div>
         </div>
         <div class="svc-chips">
@@ -1069,7 +1211,7 @@ footer {
       <div class="ind-cell">
         <span class="ind-emoji">🚗</span>
         <div class="ind-name-t">Automotive</div>
-        <div class="ind-sub-t">Auto &amp; Accessories</div>
+        <div class="ind-sub-t">Auto &amp; EVs</div>
       </div>
       <div class="ind-cell">
         <span class="ind-emoji">🛒</span>
@@ -1083,18 +1225,19 @@ footer {
       <div class="fn-tags rev del-1">
         <span class="fn-tag">Business Turnaround</span>
         <span class="fn-tag">P&amp;L Enhancement</span>
+        <span class="fn-tag">Market Cap Growth</span>
         <span class="fn-tag">Strategic Planning</span>
         <span class="fn-tag">Brand Advisory</span>
         <span class="fn-tag">Marketing Communication</span>
         <span class="fn-tag">Channel &amp; Sales Strategy</span>
+        <span class="fn-tag">Supply Chain</span>
         <span class="fn-tag">Go-To-Market</span>
+        <span class="fn-tag">After Sales Service</span>
         <span class="fn-tag">Digital Transformation</span>
         <span class="fn-tag">AI Integration</span>
-        <span class="fn-tag">Supply Chain</span>
         <span class="fn-tag">Corporate Affairs</span>
         <span class="fn-tag">Industry Associations</span>
         <span class="fn-tag">Media Relations</span>
-        <span class="fn-tag">Market Cap Growth</span>
       </div>
     </div>
   </div>
@@ -1151,13 +1294,13 @@ footer {
         <div class="team-role-t">Founder &amp; Principal Advisor</div>
         <div class="team-div"></div>
         <div class="team-contacts">
-          <a href="mailto:debaghoshal@gmail.com" class="team-ct">
+          <a href="mailto:connect@boardwalk.co.in" class="team-ct">
             <div class="ct-icon">✉</div>
-            debaghoshal@gmail.com
+            connect@boardwalk.co.in
           </a>
-          <a href="tel:+919910394628" class="team-ct">
+          <a href="tel:+911140000000" class="team-ct">
             <div class="ct-icon">📞</div>
-            +91 99103 94628
+            Office — coming soon
           </a>
           <a href="http://www.boardwalk.co.in" target="_blank" class="team-ct">
             <div class="ct-icon">🌐</div>
@@ -1184,6 +1327,90 @@ footer {
         </div>
       </div>
     </div>
+
+    <!-- Individual Expert Profiles -->
+    <div class="experts-block rev del-1">
+      <div class="label on-light">The Consortium</div>
+      <div class="experts-grid">
+        <div class="expert-card rev">
+          <div class="expert-mono">DG</div>
+          <div class="expert-nm">Deba Ghoshal</div>
+          <div class="expert-role">Founder &amp; Principal</div>
+          <div class="expert-domain">Consumer Durables &amp; related products. Former CXO, 30+ years driving growth, brand, and P&amp;L at scale.</div>
+        </div>
+        <div class="expert-card coming-soon rev del-1">
+          <div class="expert-mono">+</div>
+          <div class="expert-nm">Expert Advisor</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Profile being added</div>
+        </div>
+        <div class="expert-card coming-soon rev del-2">
+          <div class="expert-mono">+</div>
+          <div class="expert-nm">Expert Advisor</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Profile being added</div>
+        </div>
+        <div class="expert-card coming-soon rev del-3">
+          <div class="expert-mono">+</div>
+          <div class="expert-nm">Expert Advisor</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Profile being added</div>
+        </div>
+        <div class="expert-card coming-soon rev del-4">
+          <div class="expert-mono">+</div>
+          <div class="expert-nm">Expert Advisor</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Profile being added</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLIENTS & ASSOCIATES ──────────────────────────── -->
+<section id="clients" class="clients">
+  <div class="cl-inner">
+    <div class="cl-header">
+      <div>
+        <div class="label rev" style="margin-bottom: 36px;">Who We Work With</div>
+        <h2 class="d2-type rev del-1">Clients &amp;<br><em>Associates.</em></h2>
+      </div>
+      <p class="cl-header-note rev del-2">
+        Our network spans leading brands across consumer durables, cooling, automotive, and FMCG — alongside specialist associates in retail marketing, corporate affairs, and consulting.
+      </p>
+    </div>
+
+    <div class="cl-category rev del-1">
+      <div class="cl-cat-label">Air Conditioning</div>
+      <div class="cl-logos">
+        <div class="cl-logo-tile">Bosch Home Comfort</div>
+        <div class="cl-logo-tile">Hitachi AC</div>
+      </div>
+    </div>
+
+    <div class="cl-category rev del-2">
+      <div class="cl-cat-label">Air Cooling</div>
+      <div class="cl-logos">
+        <div class="cl-logo-tile">Honeywell</div>
+        <div class="cl-logo-tile">Quilo Air Coolers</div>
+      </div>
+    </div>
+
+    <div class="cl-category rev del-3">
+      <div class="cl-cat-label">Associates — Retail Marketing &amp; Corporate Affairs</div>
+      <div class="cl-logos">
+        <div class="cl-logo-tile">Ubora</div>
+        <div class="cl-logo-tile">Optimax</div>
+      </div>
+    </div>
+
+    <div class="cl-category rev del-4">
+      <div class="cl-cat-label">Consulting Networks</div>
+      <div class="cl-logos">
+        <div class="cl-logo-tile">Bain Advisor Network</div>
+        <div class="cl-logo-tile">Vedak Expert Network</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1198,7 +1425,7 @@ footer {
       Bring us your most pressing business challenge. We will bring 30+ years of front-line operator experience — and we will put our skin in your game.
     </p>
     <div class="cta-btns rev del-3">
-      <a href="mailto:debaghoshal@gmail.com" class="btn-fill">Write to Us →</a>
+      <a href="mailto:connect@boardwalk.co.in" class="btn-fill">Write to Us →</a>
       <a href="tel:+919910394628" class="btn-ghost">+91 99103 94628</a>
     </div>
   </div>
@@ -1224,6 +1451,7 @@ footer {
           <li><a href="#services">Services</a></li>
           <li><a href="#industries">Industries</a></li>
           <li><a href="#team">The Team</a></li>
+          <li><a href="#clients">Clients</a></li>
           <li><a href="#contact">Engage Us</a></li>
         </ul>
       </div>
@@ -1240,10 +1468,10 @@ footer {
       <div>
         <div class="ft-col-h">Contact</div>
         <ul class="ft-links">
-          <li><a href="mailto:debaghoshal@gmail.com">debaghoshal@gmail.com</a></li>
+          <li><a href="mailto:connect@boardwalk.co.in">connect@boardwalk.co.in</a></li>
           <li><a href="tel:+919910394628">+91 99103 94628</a></li>
           <li><a href="http://www.boardwalk.co.in" target="_blank">boardwalk.co.in</a></li>
-          <li style="color: var(--w-faint); font-size: 12px; margin-top: 6px; font-weight: 300;">New Delhi, India</li>
+          <li style="color: var(--w-faint); font-size: 12px; margin-top: 6px; font-weight: 300;">Indian Subcontinent</li>
         </ul>
       </div>
     </div>
