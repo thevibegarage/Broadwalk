@@ -761,12 +761,136 @@ nav.scrolled {
 .expert-card.coming-soon {
   opacity: 0.45;
   border-style: dashed;
+  cursor: default;
 }
 .expert-card.coming-soon .expert-mono {
   background: transparent;
   border: 1px dashed var(--bd-k);
   color: var(--k-faint);
   font-size: 28px;
+}
+
+/* Expert card — clickable state */
+.expert-card[data-expert] {
+  cursor: pointer;
+  padding-bottom: 40px;
+}
+.expert-card[data-expert]:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 32px rgba(212,168,67,0.1);
+}
+.expert-card[data-expert].active {
+  border-color: var(--gold);
+  background: var(--k);
+}
+.expert-card[data-expert].active .expert-nm  { color: var(--gold); }
+.expert-card[data-expert].active .expert-role { color: rgba(255,255,255,0.6); }
+.expert-card[data-expert].active .expert-domain { color: rgba(255,255,255,0.45); }
+.expert-card[data-expert].active .expert-mono {
+  background: var(--ink-3);
+  color: var(--gold);
+}
+
+/* Expand chevron */
+.expert-expand {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  font-size: 11px; letter-spacing: 0.1em; color: var(--gold);
+  opacity: 0; transition: opacity .25s;
+  font-family: var(--sans); font-weight: 500;
+}
+.expert-card[data-expert] { position: relative; }
+.expert-card[data-expert]:hover .expert-expand { opacity: 1; }
+.expert-card[data-expert].active .expert-expand { opacity: 1; content: '▲'; }
+.expert-card[data-expert].active .expert-expand::after { content: ' Close'; }
+
+/* Bio Drawer */
+.expert-bio-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.16,1,0.3,1);
+  margin-top: 0;
+}
+.expert-bio-drawer.open {
+  max-height: 800px;
+  margin-top: 16px;
+}
+.bio-drawer-inner {
+  background: var(--k);
+  border-left: 3px solid var(--gold);
+  padding: 52px 56px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  position: relative;
+}
+.bio-close-btn {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: 1px solid rgba(255,255,255,0.12);
+  color: var(--w-muted); font-size: 18px;
+  cursor: pointer; width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 2px;
+  transition: border-color .2s, color .2s;
+  font-family: var(--sans);
+}
+.bio-close-btn:hover { border-color: var(--gold); color: var(--gold); }
+.bio-drawer-meta { padding-top: 4px; }
+.bio-drawer-mono {
+  width: 64px; height: 64px;
+  background: var(--ink-3);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 24px; font-weight: 500;
+  color: var(--gold); margin-bottom: 20px;
+}
+.bio-drawer-name {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 400;
+  color: var(--w); margin-bottom: 6px; line-height: 1.1;
+}
+.bio-drawer-role {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.bio-drawer-domain {
+  font-size: 12.5px; font-weight: 300;
+  line-height: 1.65; color: var(--w-muted);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+}
+.bio-drawer-text {
+  font-size: 14.5px; font-weight: 300;
+  line-height: 1.88; color: var(--w-muted);
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 12px;
+}
+.bio-drawer-text p { margin-bottom: 20px; }
+.bio-drawer-text p:last-child { margin-bottom: 0; }
+.bio-drawer-text strong { color: var(--w); font-weight: 400; }
+.bio-drawer-text::-webkit-scrollbar { width: 3px; }
+.bio-drawer-text::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+.bio-drawer-text::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.35); border-radius: 2px; }
+
+/* Awards strip inside bio */
+.bio-awards {
+  margin-top: 28px; padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.bio-awards-label {
+  font-size: 9.5px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.7; margin-bottom: 12px;
+}
+.bio-awards-list {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.bio-award-chip {
+  font-size: 11px; font-weight: 300;
+  padding: 6px 14px; border-radius: 2px;
+  border: 1px solid rgba(212,168,67,0.25);
+  color: var(--w-muted);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -951,6 +1075,7 @@ footer {
   .team-layout  { grid-template-columns: 1fr; gap: 52px; }
   .team-card    { position: static; }
   .experts-grid { grid-template-columns: repeat(2, 1fr); }
+  .bio-drawer-inner { grid-template-columns: 1fr; gap: 36px; padding: 40px 32px; }
   .clients      { padding: 80px 40px; }
   .cl-header    { grid-template-columns: 1fr; gap: 24px; margin-bottom: 60px; }
   .cta-sec      { padding: 100px 40px; }
@@ -1332,11 +1457,12 @@ footer {
     <div class="experts-block rev del-1">
       <div class="label on-light">The Consortium</div>
       <div class="experts-grid">
-        <div class="expert-card rev">
+        <div class="expert-card rev" data-expert="deba">
           <div class="expert-mono">DG</div>
           <div class="expert-nm">Deba Ghoshal</div>
           <div class="expert-role">Founder &amp; Principal</div>
           <div class="expert-domain">Consumer Durables, Marketing &amp; Retail Expert</div>
+          <div class="expert-expand">▼ Profile</div>
         </div>
         <div class="expert-card coming-soon rev del-1">
           <div class="expert-mono">+</div>
@@ -1361,6 +1487,41 @@ footer {
           <div class="expert-nm">Expert Advisor</div>
           <div class="expert-role">Domain Specialist</div>
           <div class="expert-domain">Profile being added</div>
+        </div>
+      </div>
+
+      <!-- Bio Drawer (populated by JS on card click) -->
+      <div class="expert-bio-drawer" id="expertBioDrawer">
+        <div class="bio-drawer-inner">
+          <div class="bio-drawer-meta">
+            <div class="bio-drawer-mono" id="bioMono"></div>
+            <div class="bio-drawer-name" id="bioName"></div>
+            <div class="bio-drawer-role" id="bioRole"></div>
+            <div class="bio-drawer-domain" id="bioDomain"></div>
+          </div>
+          <div class="bio-drawer-text" id="bioText"></div>
+          <button class="bio-close-btn" id="bioCloseBtn" aria-label="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Hidden bio sources — add one per expert -->
+      <div id="biosrc-deba" hidden>
+        <p>Deba is a seasoned business leader with over <strong>three decades of experience</strong> in building brands, driving growth, and leading business transformation across consumer-facing industries. With deep expertise in marketing, product planning, and channel expansion, he has consistently delivered market leadership and strong business outcomes.</p>
+        <p>At <strong>Voltas (a Tata Group company)</strong>, Deba was a key force behind the transformation and leadership of its Room Air Conditioning business since 2011. He drove significant growth in market share and brand equity, while strengthening distribution, channel reach and retail across India. His leadership powered consumer-centric innovations such as All Weather AC, Adjustable AC, Pure Air AC, and Smart AC, and expanded Voltas into new categories including air coolers and home appliances. During his tenure, Voltas achieved multi-fold growth and emerged as one of India's most trusted and leading AC brands — also achieving a <strong>Top 10 ranking as the strongest Indian brand</strong> across all categories, as per the prestigious Brand Finance Report.</p>
+        <p>Earlier, Deba was part of the core leadership team at <strong>LG Electronics</strong> during its formative years in India, contributing to its rapid rise as a market leader in consumer electronics and home appliances. Working closely with global leadership, he played an important role in establishing the LG brand in India, shaping its product portfolio and go-to-market strategies, and driving high performance in a competitive market.</p>
+        <p>He has also held leadership roles across organisations such as <strong>Hero Electric</strong> and <strong>Honda Power</strong>, including pioneering efforts in India's early electric mobility space. In 2025, Deba stepped down from his executive roles and founded <strong>Boardwalk &amp; Co</strong> — a consortium of industry domain experts providing customised advisory services to consumer-facing brands, alongside co-working engagements with leading management consulting firms.</p>
+        <div class="bio-awards">
+          <div class="bio-awards-label">Awards &amp; Recognition</div>
+          <div class="bio-awards-list">
+            <span class="bio-award-chip">BW Most Influential Marketer</span>
+            <span class="bio-award-chip">Tata Business Excellence — Best Practice</span>
+            <span class="bio-award-chip">LG Global Product Planning Award</span>
+            <span class="bio-award-chip">IMI New Delhi Alumni</span>
+            <span class="bio-award-chip">Imperial College London</span>
+            <span class="bio-award-chip">Ross School of Business, U of Michigan</span>
+            <span class="bio-award-chip">IIM Ahmedabad Executive Programme</span>
+            <span class="bio-award-chip">Hon. Secretary, CEAMA</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1492,6 +1653,56 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.07 });
 document.querySelectorAll('.rev').forEach(el => io.observe(el));
+
+// Expert bio drawer
+(function() {
+  const drawer   = document.getElementById('expertBioDrawer');
+  const bioMono  = document.getElementById('bioMono');
+  const bioName  = document.getElementById('bioName');
+  const bioRole  = document.getElementById('bioRole');
+  const bioDomain= document.getElementById('bioDomain');
+  const bioText  = document.getElementById('bioText');
+  const closeBtn = document.getElementById('bioCloseBtn');
+  let activeCard = null;
+
+  document.querySelectorAll('.expert-card[data-expert]').forEach(card => {
+    card.addEventListener('click', function() {
+      const id  = this.dataset.expert;
+      const src = document.getElementById('biosrc-' + id);
+      if (!src) return;
+
+      // Toggle off if same card clicked again
+      if (activeCard === this) {
+        closeDrawer();
+        return;
+      }
+
+      // Populate
+      bioMono.textContent   = this.querySelector('.expert-mono').textContent;
+      bioName.textContent   = this.querySelector('.expert-nm').textContent;
+      bioRole.textContent   = this.querySelector('.expert-role').textContent;
+      bioDomain.textContent = this.querySelector('.expert-domain').textContent;
+      bioText.innerHTML     = src.innerHTML;
+
+      // Active card state
+      document.querySelectorAll('.expert-card').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      activeCard = this;
+
+      // Open drawer & scroll into view
+      drawer.classList.add('open');
+      setTimeout(() => drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 80);
+    });
+  });
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    document.querySelectorAll('.expert-card').forEach(c => c.classList.remove('active'));
+    activeCard = null;
+  }
+
+  closeBtn.addEventListener('click', closeDrawer);
+})();
 </script>
 </body>
 </html>
