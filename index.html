@@ -194,6 +194,74 @@ nav.scrolled {
   border-bottom-color: var(--bd);
 }
 
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 36px; height: 36px;
+  background: none; border: none;
+  cursor: pointer; padding: 4px;
+  z-index: 600;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--w);
+  transition: transform .35s ease, opacity .25s ease, width .25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu panel */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(6,9,28,0.97);
+  backdrop-filter: blur(28px) saturate(180%);
+  z-index: 490;
+  padding: 100px 40px 52px;
+  flex-direction: column;
+  gap: 0;
+  transform: translateY(-100%);
+  transition: transform .45s cubic-bezier(0.16,1,0.3,1);
+  border-bottom: 1px solid var(--bd);
+}
+.mobile-menu.open {
+  transform: translateY(0);
+}
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 32px; font-weight: 400;
+  color: var(--w-muted); text-decoration: none;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--bd);
+  transition: color .25s;
+  letter-spacing: -0.01em;
+}
+.mobile-menu a:hover { color: var(--w); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu-cta {
+  margin-top: 36px;
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important; font-weight: 500 !important;
+  letter-spacing: 0.1em !important; text-transform: uppercase !important;
+  color: var(--gold) !important;
+  border: 1px solid var(--bd-gold) !important;
+  padding: 14px 28px !important;
+  border-radius: 2px;
+  display: inline-block !important;
+  text-align: center;
+  transition: background .25s, color .25s !important;
+}
+.mobile-menu-cta:hover {
+  background: var(--gold) !important;
+  color: var(--ink) !important;
+  border-bottom: 1px solid var(--gold) !important;
+}
+
 .nav-logo {
   display: flex; align-items: center;
   text-decoration: none;
@@ -1112,6 +1180,9 @@ footer {
   nav           { padding: 24px 40px; }
   nav.scrolled  { padding: 16px 40px; }
   .nav-links    { display: none; }
+  .nav-engage   { display: none; }
+  .nav-hamburger { display: flex; }
+  .mobile-menu  { display: flex; }
   .hero         { padding: 0 40px; }
   .hero-meta    { display: none; }
   .hero-wm      { display: none; }
@@ -1169,7 +1240,20 @@ footer {
     <li><a href="#clients">Clients</a></li>
   </ul>
   <a href="#contact" class="nav-engage">Engage Us</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#philosophy" class="mob-link">The Idea</a>
+  <a href="#services"   class="mob-link">Services</a>
+  <a href="#industries" class="mob-link">Industries</a>
+  <a href="#team"       class="mob-link">The Team</a>
+  <a href="#clients"    class="mob-link">Clients</a>
+  <a href="#contact" class="mobile-menu-cta">Engage Us</a>
+</div>
 
 <!-- ─── HERO ─────────────────────────────────────────── -->
 <section class="hero">
@@ -1717,6 +1801,23 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
+
+// Hamburger menu
+const hamburger  = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
 
 // Scroll reveal
 const io = new IntersectionObserver(entries => {
