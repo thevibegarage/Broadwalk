@@ -913,6 +913,14 @@ nav.scrolled {
   opacity: 0; transition: opacity .25s;
   font-family: var(--sans); font-weight: 500;
 }
+.expert-former {
+  font-size: 0.67rem;
+  color: rgba(255,255,255,0.40);
+  letter-spacing: 0.03em;
+  margin-top: 8px;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.4;
+}
 .expert-card[data-expert] { position: relative; }
 .expert-card[data-expert]:hover .expert-expand { opacity: 1; }
 .expert-card[data-expert].active .expert-expand { opacity: 1; content: '▲'; }
@@ -1290,7 +1298,7 @@ footer {
 <div class="stats">
   <div class="stats-grid">
     <div class="stat rev">
-      <div class="stat-n">100<sup>+</sup></div>
+      <div class="stat-n">200<sup>+</sup></div>
       <div class="stat-l">Aggregate years of<br>front-line experience</div>
     </div>
     <div class="stat rev del-1">
@@ -1513,6 +1521,7 @@ footer {
         <span class="fn-tag">Corporate Affairs</span>
         <span class="fn-tag">Industry Associations</span>
         <span class="fn-tag">Media Relations</span>
+        <span class="fn-tag">New Launches</span>
       </div>
     </div>
   </div>
@@ -1607,40 +1616,71 @@ footer {
     <div class="experts-block rev del-1">
       <div class="label on-light">The Consortium</div>
       <div class="experts-grid">
+        <!-- Row 1: Deba, SAA, Nikhil, Vinod, Sumit -->
         <div class="expert-card rev" data-expert="deba" data-photo="deba-portrait.jpg">
           <img src="deba-thumb.jpg" alt="Deba Ghoshal" class="expert-photo">
           <div class="expert-nm">Deba Ghoshal</div>
           <div class="expert-role">Founder &amp; Principal</div>
-          <div class="expert-domain">Consumer Durables, Marketing &amp; Retail Expert</div>
+          <div class="expert-domain">Consumer Durables, Marketing &amp; Retail</div>
+          <div class="expert-former">Ex Voltas (Tata) · LG Electronics</div>
           <div class="expert-expand">▼ Profile</div>
         </div>
-        <div class="expert-card rev del-1" data-expert="sumit" data-photo="sumit-thumb.jpg">
+        <div class="expert-card rev del-1" data-expert="saa" data-photo="saa-thumb.jpg">
+          <img src="saa-thumb.jpg" alt="Syed Amjad Ali" class="expert-photo">
+          <div class="expert-nm">Syed Amjad Ali</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Advertising &amp; Brand Communications</div>
+          <div class="expert-former">Ex Lintas · LG Electronics · Maruti</div>
+          <div class="expert-expand">▼ Profile</div>
+        </div>
+        <div class="expert-card rev del-2" data-expert="nikhil" data-photo="nikhil-thumb.jpg">
+          <img src="nikhil-thumb.jpg" alt="Nikhil Mathur" class="expert-photo">
+          <div class="expert-nm">Nikhil Mathur</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Consumer Insights &amp; Market Intelligence</div>
+          <div class="expert-former">Ex GfK India (NIQ) · Nielsen · Kantar</div>
+          <div class="expert-expand">▼ Profile</div>
+        </div>
+        <div class="expert-card rev del-3" data-expert="vinod" data-photo="vinod-thumb.jpg">
+          <img src="vinod-thumb.jpg" alt="Vinod Agarwal" class="expert-photo">
+          <div class="expert-nm">Vinod Agarwal</div>
+          <div class="expert-role">Domain Specialist</div>
+          <div class="expert-domain">Finance, CFO Advisory &amp; Compliances</div>
+          <div class="expert-former">Ex Canon India · HCL · Times of India</div>
+          <div class="expert-expand">▼ Profile</div>
+        </div>
+        <div class="expert-card rev del-4" data-expert="sumit" data-photo="sumit-thumb.jpg">
           <img src="sumit-thumb.jpg" alt="Sumit Kumar Singh" class="expert-photo">
           <div class="expert-nm">Sumit Kumar Singh</div>
           <div class="expert-role">Domain Specialist</div>
           <div class="expert-domain">AI &amp; Digital Transformation</div>
+          <div class="expert-former">Ex Microsoft · Times Internet · MakeMyTrip</div>
           <div class="expert-expand">▼ Profile</div>
         </div>
-        <div class="expert-card named-soon rev del-2">
-          <div class="expert-mono">SA</div>
-          <div class="expert-nm">Syed Amjad Ali</div>
+        <!-- Row 2: Shiv, Girish, Kapil -->
+        <div class="expert-card rev del-1" data-expert="shiv" data-photo="shiv-thumb.jpg">
+          <img src="shiv-thumb.jpg" alt="Shiv Burman" class="expert-photo">
+          <div class="expert-nm">Shiv Burman</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Advertising &amp; Communications</div>
-          <div class="joining-badge">Joining Soon</div>
+          <div class="expert-domain">Sports Marketing &amp; Brand Partnerships</div>
+          <div class="expert-former">Ex IMG Global · IPL Commercial Programme</div>
+          <div class="expert-expand">▼ Profile</div>
         </div>
-        <div class="expert-card named-soon rev del-3">
-          <div class="expert-mono">VA</div>
-          <div class="expert-nm">Vinod Agarwal</div>
+        <div class="expert-card rev del-2" data-expert="girish" data-photo="girish-thumb.jpg">
+          <img src="girish-thumb.jpg" alt="Girish Shah" class="expert-photo">
+          <div class="expert-nm">Girish Shah</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">CA &amp; CS, Finance &amp; Compliances</div>
-          <div class="joining-badge">Joining Soon</div>
+          <div class="expert-domain">Customer Service &amp; Operations Excellence</div>
+          <div class="expert-former">Ex Voltas (Tata) · Samsung India</div>
+          <div class="expert-expand">▼ Profile</div>
         </div>
-        <div class="expert-card named-soon rev del-4">
+        <div class="expert-card rev del-3" data-expert="kapil">
           <div class="expert-mono">KK</div>
           <div class="expert-nm">Kapil Kumria</div>
           <div class="expert-role">Domain Specialist</div>
-          <div class="expert-domain">Government Affairs</div>
-          <div class="joining-badge">Joining Soon</div>
+          <div class="expert-domain">Corporate Affairs &amp; Strategic Alliances</div>
+          <div class="expert-former">Founder · Corporate Group Network</div>
+          <div class="expert-expand">▼ Profile</div>
         </div>
       </div>
 
@@ -1675,6 +1715,37 @@ footer {
         <p>Earlier, Deba was part of the core leadership team at <strong>LG Electronics</strong> during its formative years in India, contributing to its rapid rise as a market leader in consumer electronics and home appliances. Working closely with global leadership, he played an important role in establishing the LG brand in India, shaping its product portfolio and go-to-market strategies, and driving high performance in a competitive market.</p>
         <p>He has also held leadership roles across organizations such as <strong>Hero Electric</strong> and <strong>Honda Power</strong>, including pioneering efforts in India's early electric mobility space. In 2025, Deba stepped down from his executive roles and founded <strong>Boardwalk &amp; Co</strong> — a consortium of senior industry domain experts providing customized advisory services to consumer-facing brands, alongside co-working engagements with leading consulting firms.</p>
         <p>Deba is a recipient of several prestigious awards, including the Business World Most Influential Marketer Awards, Tata Business Excellence Best Practice recognition and LG Global Product Planning Award. He is an alumnus of the International Management Institute (IMI), New Delhi, and has excelled in executive programs from Imperial College London, Ross School of Business (University of Michigan), and IIM Ahmedabad. He has also served as the Hon. Secretary and Executive Committee member of CEAMA.</p>
+      </div>
+      <div id="biosrc-saa" hidden>
+        <p>Syed Amjad Ali is an advertising and brand-building professional with over three decades at the intersection of brand strategy and business growth. A veteran of Lintas — one of India's premier advertising agencies — he built his credentials working with some of India's most recognised names, including LG Electronics, Maruti Suzuki, Havells, Dabur, OLX, Vistara, and Honda, and played a defining role in transforming brands such as Greenply/Greenlam and Micromax into category leaders.</p>
+        <p>At Lintas, his roles evolved from creative and account management to deeper involvement in brand thinking and business strategy. What remained constant across every engagement was his instinct for identifying brand potential early and backing it with conviction — not just campaign execution, but building something enduring.</p>
+        <p>In his next chapter, Amjad transitioned into business consulting, taking on hands-on mandates with emerging brands such as Homefoil Aluminium Foils and Milagrow Robots. He immersed himself in the digital ecosystem — building brands' digital presence, onboarding them onto e-commerce and quick commerce platforms, and driving performance marketing outcomes. At Homefoil, he achieved a strong ROAS of 2.3 through focused performance marketing — an outcome that reflected both strategic clarity and execution discipline.</p>
+        <p>Today, Amjad advises brands on brand building, business growth, and technology transformation through And And Brand Partners. His perspective spans legacy brand architecture and new-age digital strategy — allowing him to operate fluidly in both worlds.</p>
+      </div>
+      <div id="biosrc-nikhil" hidden>
+        <p>Nikhil Mathur is a consumer insights and market intelligence leader with 25 years of experience across research, strategy, and business leadership. He served as Managing Director of GfK India — now part of NIQ (NielsenIQ) — one of the world's leading consumer data and analytics firms, and as Asia-Pacific Innovation Lead at Nielsen and Kantar, where he worked with global brands on growth strategy, shopper insight, and market entry.</p>
+        <p>Across his career, Nikhil has helped organisations move from data to decision — translating complex consumer behaviour into actionable business strategy. His expertise spans brand equity measurement, innovation pipeline development, demand forecasting, and competitive intelligence, with deep sector knowledge in consumer electronics, FMCG, and retail.</p>
+        <p>As Co-Founder of ANT International, he has continued to build the bridge between rigorous market intelligence and practical business application, advising companies on go-to-market strategy, category entry, and growth architecture. His advisory work is grounded in the belief that better decisions come from better questions — not just better data.</p>
+      </div>
+      <div id="biosrc-vinod" hidden>
+        <p>Vinod Agarwal is a Chartered Accountant and Company Secretary with over 30 years of cross-functional finance leadership across MNCs and high-growth businesses. He has served as CFO at Canon India, HCL Global Alliances, and Guthy Renker India — combining deep financial discipline with a strong understanding of operations, compliance, and business growth.</p>
+        <p>At Canon India, he played a central role in building the financial and operational infrastructure for one of India's leading imaging and office equipment brands. His experience spans MRP and ERP system implementation (Oracle, Fourth Shift), treasury management, regulatory compliance, and M&amp;A advisory across organisations including Bausch &amp; Lomb, Ray-Ban India, and Times of India.</p>
+        <p>Vinod has also worked with startups at their most formative stages. As CFO of Ultra Motors, a company commercialising electric motor technology, he was part of the founding team that engaged with Crompton Greaves and Hero Cycles to introduce electric scooters in India between 2007 and 2009 — well ahead of the EV curve. The company was later acquired by Hero Electric. He currently advises Indian and multinational companies as a part-time CFO and financial consultant.</p>
+      </div>
+      <div id="biosrc-shiv" hidden>
+        <p>Shiv Burman is a sports marketing strategist with over 17 years in the business of sport — across leagues, federations, franchises, rights, fan engagement, and brand partnerships. He began his career on the team side with an IPL franchise, then moved into fan engagement and community-led wellness gamification, before founding a non-live sports content company in 2015.</p>
+        <p>He joined IMG Global — the BCCI's commercial consultants — where he led the IPL's commercial programme, overseeing a portfolio of approximately USD 100 million. In that role, he set commercial frameworks for franchises, structured rights deals, and closed large-scale partnerships across cricket's biggest property. His time at IMG built a global network spanning sport, talent, and entertainment that he continues to draw on today.</p>
+        <p>In 2021, Shiv founded Burman Sports on a clear strategic distinction: where most of the industry sells inventory, Burman Sports starts where the rights sheet ends — forming 360° campaign strategies built on fan passion points rather than logo placements. The agency's work has shaped strategy for Indian and global brands across cricket, football, golf, and tennis, and has won multiple industry awards. His deep expertise lies in commercial rights structures, and in how to build brand partnerships from first principles rather than templates.</p>
+      </div>
+      <div id="biosrc-girish" hidden>
+        <p>Girish Shah is a senior operations and customer service leader with 38 years of experience in the consumer electronics and durables industry. He served as Senior GM and Head of Customer Service at Voltas (Tata Group) from 2017 to 2024, where he led the after-sales and service network for one of India's leading air conditioning brands, driving service excellence across a national distribution footprint.</p>
+        <p>Earlier, he spent over 13 years at Samsung India as GM of Manufacturing (1995–2008), where his division earned the "World Best Productivity Plant" award for seven consecutive years — a recognition of operational discipline at international standards. He has also served as AVP at Videocon, building a career rooted in manufacturing excellence, quality systems, and service leadership.</p>
+        <p>Girish holds Six Sigma Black Belt certification and is trained in Toyota Production System (TPS) and Lean manufacturing — methodologies he has applied at scale across large factory and service operations. His advisory work focuses on after-sales service strategy, operational efficiency, customer satisfaction improvement, and service network design for consumer durables brands.</p>
+      </div>
+      <div id="biosrc-kapil" hidden>
+        <p>Kapil Kumria is a corporate affairs and strategic alliances professional with over three decades of experience building businesses at the intersection of government relations, brand partnerships, and corporate governance. As Chairman and Managing Director of Corporate Group Network, he has led engagement across industry, government, and civil society — building institutional relationships that drive meaningful business outcomes.</p>
+        <p>He is the founder of Corporate Flyers, Eventz Unlimited, Optimax Aces, White Horse Marcom, and Optimann — a portfolio of ventures spanning events, marketing services, and corporate communications. His corporate social responsibility work includes co-founding the KHUSHI Foundation alongside cricket icon Kapil Dev, focused on child welfare and education. He also serves on the Board of United Way India.</p>
+        <p>Kapil's advisory work brings deep networks across government, media, and industry, with particular strength in reputation management, regulatory navigation, and stakeholder engagement for brands operating in complex environments.</p>
       </div>
     </div>
   </div>
