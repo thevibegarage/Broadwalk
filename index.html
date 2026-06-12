@@ -1960,9 +1960,13 @@ document.querySelectorAll('.rev').forEach(el => io.observe(el));
   });
 
   function closeDrawer() {
+    const cardToReturn = activeCard;
     drawer.classList.remove('open');
     document.querySelectorAll('.expert-card').forEach(c => c.classList.remove('active'));
     activeCard = null;
+    if (cardToReturn) {
+      setTimeout(() => cardToReturn.scrollIntoView({ behavior: 'smooth', block: 'center' }), 50);
+    }
   }
 
   closeBtn.addEventListener('click', closeDrawer);
