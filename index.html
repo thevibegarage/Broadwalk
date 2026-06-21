@@ -1410,6 +1410,62 @@ footer {
   .cta-btns     { flex-direction: column; align-items: center; }
   .ft-top       { grid-template-columns: 1fr; }
 }
+
+/* ─── MEDIA SECTION ─────────────────────────────────── */
+.media-sec { background: var(--cream); padding: 120px 80px; }
+.media-inner { max-width: 1080px; margin: 0 auto; }
+.media-header { margin-bottom: 64px; }
+.media-list { display: flex; flex-direction: column; }
+.media-item {
+  display: grid;
+  grid-template-columns: 160px 90px 1fr 100px 24px;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 12px;
+  border-bottom: 1px solid var(--bd-k);
+  text-decoration: none;
+  transition: background .2s;
+  border-radius: 2px;
+}
+.media-item:first-child { border-top: 1px solid var(--bd-k); }
+.media-item:hover { background: var(--cream-2); }
+.media-item:hover .media-arrow { color: var(--gold); transform: translateX(4px); }
+.media-pub {
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase; color: var(--k);
+}
+.media-kind {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); font-weight: 500;
+}
+.media-headline {
+  font-family: var(--serif); font-size: 17px; color: var(--k); line-height: 1.4;
+}
+.media-date { font-size: 12px; color: var(--k-muted); text-align: right; }
+.media-arrow {
+  font-size: 18px; color: var(--k-muted);
+  transition: color .2s, transform .2s;
+  justify-self: center;
+}
+@media (max-width: 900px) {
+  .media-sec { padding: 80px 40px; }
+  .media-item { grid-template-columns: 130px 80px 1fr 24px; }
+  .media-date { display: none; }
+}
+@media (max-width: 640px) {
+  .media-sec { padding: 64px 24px; }
+  .media-item {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 6px 12px;
+    padding: 18px 8px;
+  }
+  .media-pub  { grid-column: 1; grid-row: 1; }
+  .media-kind { grid-column: 1; grid-row: 2; }
+  .media-headline { grid-column: 1 / -1; grid-row: 3; font-size: 15px; }
+  .media-date { display: none; }
+  .media-arrow { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+}
 </style>
 </head>
 <body>
@@ -1426,6 +1482,7 @@ footer {
     <li><a href="#process">Our Process</a></li>
     <li><a href="#team">The Team</a></li>
     <li><a href="#clients">Clients</a></li>
+    <li><a href="#media">Media</a></li>
   </ul>
   <a href="#contact" class="nav-engage">Engage Us</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
@@ -1441,6 +1498,7 @@ footer {
   <a href="#process"    class="mob-link">Our Process</a>
   <a href="#team"       class="mob-link">The Team</a>
   <a href="#clients"    class="mob-link">Clients</a>
+  <a href="#media"      class="mob-link">Media</a>
   <a href="#contact" class="mobile-menu-cta">Engage Us</a>
 </div>
 
@@ -1978,6 +2036,75 @@ footer {
   </div>
 </section>
 
+<!-- ─── MEDIA ───────────────────────────────────────────── -->
+<section id="media" class="media-sec">
+  <div class="media-inner">
+    <div class="media-header">
+      <div class="label on-light rev">In The Press</div>
+      <h2 class="d2-type on-light rev del-1">Media &amp;<br><em>Coverage.</em></h2>
+    </div>
+    <div class="media-list">
+
+      <a class="media-item rev" href="https://www.storyboard18.com/brand-makers/ex-voltas-cmo-deba-ghoshal-joins-bosch-home-comfort-india-as-marketing-advisor-101413.htm" target="_blank" rel="noopener">
+        <div class="media-pub">Storyboard18</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Ex-Voltas CMO Deba Ghoshal joins Bosch Home Comfort India as Marketing Advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://www.impactonnet.com/more-from-impact/bosch-home-comfort-india-ropes-in-deba-ghoshal-as-business-advisor-14930.html" target="_blank" rel="noopener">
+        <div class="media-pub">Impact</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Bosch Home Comfort India ropes in Deba Ghoshal as business advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://share.google/PMSSFwC0t2qzrZnwM" target="_blank" rel="noopener">
+        <div class="media-pub">Exchange4Media</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Bosch Home Comfort India appoints Deba Ghoshal as Leadership &amp; Business Advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://share.google/0eOAEkVtyoiXaWyI8" target="_blank" rel="noopener">
+        <div class="media-pub">Exchange4Media</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Bosch Home Comfort India appoints Deba Ghoshal as Leadership &amp; Business Advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://share.google/CsUjCRDEFdlMtQa6i" target="_blank" rel="noopener">
+        <div class="media-pub">Marketing Media</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Deba Ghoshal Joins Bosch Home Comfort Group As Marketing Growth Advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://share.google/Pmsua8Z2UkTUhgV6K" target="_blank" rel="noopener">
+        <div class="media-pub">Marketing Media</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Bosch Home Comfort India appoints Deba Ghoshal as Marketing Advisor</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+      <a class="media-item rev" href="https://share.google/FTtquNeQRtzGHYCnF" target="_blank" rel="noopener">
+        <div class="media-pub">Marketing Media</div>
+        <div class="media-kind">Appointment</div>
+        <div class="media-headline">Bosch Home Comfort India names Deba Ghoshal as Leadership &amp; Business Advisor – Marketing</div>
+        <div class="media-date">2026</div>
+        <div class="media-arrow">→</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ─── CTA ────────────────────────────────────────────── -->
 <section id="contact" class="cta-sec">
   <div class="cta-inner">
@@ -2019,6 +2146,7 @@ footer {
           <li><a href="#process">Our Process</a></li>
           <li><a href="#team">The Team</a></li>
           <li><a href="#clients">Clients</a></li>
+          <li><a href="#media">Media</a></li>
           <li><a href="#contact">Engage Us</a></li>
         </ul>
       </div>
