@@ -1411,6 +1411,59 @@ footer {
   .ft-top       { grid-template-columns: 1fr; }
 }
 
+/* ─── TESTIMONIALS ──────────────────────────────────── */
+.testi-block {
+  margin-top: 100px;
+  padding-top: 72px;
+  border-top: 1px solid var(--bd-k);
+}
+.testi-block-label {
+  font-size: 10px; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.8;
+  font-family: var(--sans); margin-bottom: 48px;
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.testi-card {
+  background: var(--cream-2);
+  border-radius: 4px;
+  padding: 40px 44px 36px;
+  display: flex; flex-direction: column;
+}
+.testi-quote-mark {
+  font-family: var(--serif); font-size: 72px; line-height: 0.6;
+  color: var(--gold); opacity: 0.5;
+  margin-bottom: 24px; display: block;
+  user-select: none;
+}
+.testi-text {
+  font-family: var(--serif); font-size: 17px; line-height: 1.7;
+  color: var(--k); flex: 1; margin-bottom: 32px;
+  font-style: italic;
+}
+.testi-divider {
+  width: 32px; height: 1px;
+  background: var(--gold); opacity: 0.5;
+  margin-bottom: 20px;
+}
+.testi-name {
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.04em; color: var(--k); margin-bottom: 4px;
+}
+.testi-role {
+  font-family: var(--sans); font-size: 11px;
+  color: var(--k-muted); line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .testi-grid { grid-template-columns: 1fr; gap: 24px; }
+  .testi-block { margin-top: 64px; padding-top: 52px; }
+  .testi-card { padding: 32px 28px; }
+  .testi-text { font-size: 16px; }
+}
+
 /* ─── MEDIA SECTION ─────────────────────────────────── */
 .media-sec { background: var(--cream); padding: 120px 80px; }
 .media-inner { max-width: 1080px; margin: 0 auto; }
@@ -1986,6 +2039,31 @@ footer {
         <p>Kapil's advisory work brings deep networks across government, media, and industry, with particular strength in reputation management, regulatory navigation, and stakeholder engagement for brands operating in complex environments.</p>
       </div>
     </div>
+
+    <!-- Testimonials -->
+    <div class="testi-block">
+      <div class="testi-block-label rev">What People Say</div>
+      <div class="testi-grid">
+
+        <div class="testi-card rev">
+          <span class="testi-quote-mark">"</span>
+          <p class="testi-text">I have worked with Deba and Amjad in the past and am excited to see them come together at Boardwalk. They both have sharp insights which will be an asset to consumer facing businesses. Looking at the Boardwalk gameplan, it appears to me that this can become a hugely useful resource for helping brands scale up to their true potential. I wish Team Boardwalk all the best in their new venture.</p>
+          <div class="testi-divider"></div>
+          <div class="testi-name">Ashish Bhasin</div>
+          <div class="testi-role">Founder, The Bhasin Consulting Group<br>Former CEO Asia Pacific, Dentsu</div>
+        </div>
+
+        <div class="testi-card rev del-1">
+          <span class="testi-quote-mark">"</span>
+          <p class="testi-text">These guys understand brands and marketing better than most. Trust their expertise &amp; instincts, they will deliver!</p>
+          <div class="testi-divider"></div>
+          <div class="testi-name">R. Balki</div>
+          <div class="testi-role">Indian Filmmaker &amp; Screenwriter<br>Former Group Chairman &amp; Chief Creative Officer, Mullen Lowe Lintas Group</div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
